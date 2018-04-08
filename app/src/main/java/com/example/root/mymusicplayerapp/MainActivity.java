@@ -19,20 +19,28 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayList<Song> songs = new ArrayList<Song>();
 
-        songs.add(new Song("One","Metallica", 214));
-        songs.add(new Song("Back In Black", "ACDC", 320));
-        songs.add(new Song("three", "tolookosu", 190));
-        songs.add(new Song("four","oyyisa", 270));
-        songs.add(new Song("five", "massokka",234));
-        songs.add(new Song("six", "temmokka",432));
-        songs.add(new Song("seven", "kenekkaku",232));
-        songs.add(new Song("eight","kawinta",343));
-        songs.add(new Song("nine", "wo'e",345));
-        songs.add(new Song("ten","na'aacha",350));
+        songs.add(new Song("One", "Metallica", 444));
+        songs.add(new Song("Back In Black", "ACDC", 255));
+        songs.add(new Song("Shake a Leg", "ACDC", 245));
+        songs.add(new Song("Fade to Black", "Metallica", 417));
+        songs.add(new Song("Black", "Pearl Jam", 348));
+        songs.add(new Song("Wish You Were Here", "Pink Floyd", 334));
+        songs.add(new Song("Money", "Pink Floyd", 413));
+        songs.add(new Song("Moonloop", "Porcupine Tree", 1024));
+        songs.add(new Song("Wojenka", "Lao Che", 210));
+        songs.add(new Song("Fuel", "Metallica", 269));
 
         final SongPlayer player = new SongPlayer(songs.size(), songs);
-
         SongAdapter itemsAdapter = new SongAdapter(this, songs);
+
+        TextView prevButton = (TextView) findViewById(R.id.prevButton);
+        prevButton.setText(" Prev ");
+        TextView nextButton = (TextView) findViewById(R.id.nextButton);
+        nextButton.setText(" Next ");
+        final TextView playButton = (TextView) findViewById(R.id.playButton);
+        playButton.setText(" Play ");
+        TextView stopButton = (TextView) findViewById(R.id.stopButton);
+        stopButton.setText(" Stop ");
 
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
@@ -40,21 +48,21 @@ public class MainActivity extends AppCompatActivity {
         final TextView nowPlayingMsg = (TextView) findViewById(R.id.nowPlaying);
         nowPlayingMsg.setText(player.upDateMessage());
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
-                Toast.makeText(v.getContext(),"Listner Test" + position, Toast.LENGTH_SHORT).show();
                 player.setIndex(position);
-                nowPlayingMsg.setText(player.upDateMessage());
-                //String value = (String)adapter.getItemAtPosition(position);
-                // assuming string and if you want to get the value on click of list item
-                // do what you intend to do on click of listview row
+                if (!(player.isPlaying())) {
+                    player.Play();
+                    playButton.setText("Pause");
+                    nowPlayingMsg.setText(player.upDateMessage());
+                } else {
+                    nowPlayingMsg.setText(player.upDateMessage());
+                }
             }
         });
 
-        TextView prevButton = (TextView) findViewById(R.id.prevButton);
-        prevButton.setText(" Prev ");
+
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        TextView nextButton = (TextView) findViewById(R.id.nextButton);
-        nextButton.setText(" Next ");
+
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,25 +80,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final TextView playButton = (TextView) findViewById(R.id.playButton);
-        playButton.setText(" Play ");
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (!(player.isPlaying())){player.Play();playButton.setText("Pause");
+                if (!(player.isPlaying())) {
+                    player.Play();
+                    playButton.setText("Pause");
+                    nowPlayingMsg.setText(player.upDateMessage());
+                } else {
+                    player.Stop();
+                    playButton.setText(" Play ");
                     nowPlayingMsg.setText(player.upDateMessage());
                 }
-
-                else{player.Stop();playButton.setText(" Play ");
-                    nowPlayingMsg.setText(player.upDateMessage());}
 
             }
         });
 
-
-        TextView stopButton = (TextView) findViewById(R.id.stopButton);
-        stopButton.setText(" Stop ");
         stopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,20 +110,20 @@ public class MainActivity extends AppCompatActivity {
 
         // OnClickListener for song details
         // Find the View that shows the numbers category
- //       TextView numbers = (TextView) findViewById(R.id.numbers);
+        //       TextView numbers = (TextView) findViewById(R.id.numbers);
 
         // Set a click listener on that View
- //       numbers.setOnClickListener(new OnClickListener() {
-            // The code in this method will be executed when the numbers category is clicked on.
- //           @Override
- //           public void onClick(View view) {
-                // Create a new intent to open the {@link NumbersActivity}
+        //       numbers.setOnClickListener(new OnClickListener() {
+        // The code in this method will be executed when the numbers category is clicked on.
+        //           @Override
+        //           public void onClick(View view) {
+        // Create a new intent to open the {@link NumbersActivity}
 //                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
 
-                // Start the new activity
+        // Start the new activity
 //                startActivity(numbersIntent);
- //           }
- //       });
+        //           }
+        //       });
 
     }
 }

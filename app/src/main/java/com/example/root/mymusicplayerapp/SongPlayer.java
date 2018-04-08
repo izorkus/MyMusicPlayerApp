@@ -37,7 +37,7 @@ public class SongPlayer {
     }
 
     public void setIndex(int index){
-        index = mIndexSong;
+        mIndexSong = index;
     }
 
     public boolean isPlaying(){
