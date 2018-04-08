@@ -40,6 +40,10 @@ public class SongPlayer {
         mIndexSong = index;
     }
 
+    public int getIndex(){
+        return mIndexSong;
+    }
+
     public boolean isPlaying(){
         return mIsPlaying;
     }
