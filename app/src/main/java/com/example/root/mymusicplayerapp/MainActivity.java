@@ -109,9 +109,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // OnClickListener for song details
-        TextView numbers = (TextView) findViewById(R.id.infoButton);
+        TextView songDetails = (TextView) findViewById(R.id.infoButton);
 
-        numbers.setOnClickListener(new View.OnClickListener() {
+        songDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent detailsIntent = new Intent(MainActivity.this, SongDetails.class);

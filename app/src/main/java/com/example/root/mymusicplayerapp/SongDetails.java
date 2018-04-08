@@ -3,6 +3,7 @@ package com.example.root.mymusicplayerapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +44,21 @@ public class SongDetails extends AppCompatActivity {
         TextView timeDetail = (TextView) findViewById(R.id.durationsDetail);
         timeDetail.setText(nowPlayingSong.getSongDuration());
 
+
+
         //String mesgT= "Now playing: " + nowPlayingSong.getSongTitle() + " by " + nowPlayingSong.getSongArtist() + "time:" +nowPlayingSong.getSongDuration();
         //Toast.makeText(this, mesgT, Toast.LENGTH_LONG).show();
+
+        TextView songDetails = (TextView) findViewById(R.id.backButton);
+
+        songDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent playerIntent = new Intent(SongDetails.this, MainActivity.class);
+                startActivity(playerIntent);
+            }
+        });
+
+
     }
 }
