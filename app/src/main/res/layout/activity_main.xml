@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.root.mymusicplayerapp.MainActivity">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical"
+        android:background="#EEE"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/nowPlaying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:background="#EEE"
+            tools:text="Now Playing" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="#EEE"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/prevButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:padding="8dp"
+                android:background="#FFF"
+                android:textSize="18dp"
+                tools:text="Prev" />
+
+            <TextView
+                android:id="@+id/stopButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="18dp"
+                android:background="#FFF"
+                tools:text="Stop" />
+
+            <TextView
+                android:id="@+id/playButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="18dp"
+                android:background="#FFF"
+                tools:text="Play" />
+
+            <TextView
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:textSize="18dp"
+                android:background="#FFF"
+                tools:text="Next" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

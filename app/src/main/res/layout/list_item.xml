@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/songname_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Back in Black"/>
+
+        <TextView
+            android:id="@+id/artist_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="ACDC"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/songduration_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="8dp"
+        android:textSize="20sp"
+        tools:text="3:34" />
+
+
+</RelativeLayout>
