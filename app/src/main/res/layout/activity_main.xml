@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="fill"
     android:orientation="vertical"
     tools:context="com.example.root.mymusicplayerapp.MainActivity">
 
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/footer"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentTop="true" />
 
     <LinearLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:orientation="vertical"
         android:background="#EEE"
-        android:padding="8dp"
-        android:layout_alignParentLeft="true">
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/nowPlaying"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="4dp"
-            android:textSize="16dp"
-            android:gravity="center"
             android:background="#EEE"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textSize="16sp"
             tools:text="Now Playing" />
 
         <LinearLayout
@@ -86,8 +87,8 @@
                 android:layout_height="wrap_content"
                 android:background="#FFF"
                 android:padding="8dp"
-                android:textSize="9.68dp"
-                android:text=" Song\nDetails" />
+                android:text=" Song\nDetails"
+                android:textSize="9.68dp" />
 
         </LinearLayout>
 

@@ -16,10 +16,12 @@ public class SongDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_details);
 
+        //Extra data with Intend for sync between activites
         Intent intMsg= getIntent();
         Bundle b = intMsg.getExtras();
         int index = (int) b.get("name");
 
+        //Same data
         ArrayList<Song> songs = new ArrayList<Song>();
 
         songs.add(new Song("One", "Metallica", 444));
@@ -35,6 +37,7 @@ public class SongDetails extends AppCompatActivity {
 
         Song nowPlayingSong = (Song) songs.get(index);
 
+        //TextViews for data presentation
         TextView artistDetail = (TextView) findViewById(R.id.artistDetail);
         artistDetail.setText(nowPlayingSong.getSongArtist());
 
@@ -44,13 +47,9 @@ public class SongDetails extends AppCompatActivity {
         TextView timeDetail = (TextView) findViewById(R.id.durationsDetail);
         timeDetail.setText(nowPlayingSong.getSongDuration());
 
-
-
-        //String mesgT= "Now playing: " + nowPlayingSong.getSongTitle() + " by " + nowPlayingSong.getSongArtist() + "time:" +nowPlayingSong.getSongDuration();
-        //Toast.makeText(this, mesgT, Toast.LENGTH_LONG).show();
-
         TextView songDetails = (TextView) findViewById(R.id.backButton);
 
+        //Back button
         songDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

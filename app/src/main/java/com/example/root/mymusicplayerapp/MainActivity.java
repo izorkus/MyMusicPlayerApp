@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,8 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //ArrayList for songs
         final ArrayList<Song> songs = new ArrayList<Song>();
 
+        //Data to fill ArrayList
         songs.add(new Song("One", "Metallica", 444));
         songs.add(new Song("Back In Black", "ACDC", 255));
         songs.add(new Song("Shake a Leg", "ACDC", 245));
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         final SongPlayer player = new SongPlayer(songs.size(), songs);
         SongAdapter itemsAdapter = new SongAdapter(this, songs);
 
+        //Buttons and message objects
         TextView prevButton = (TextView) findViewById(R.id.prevButton);
         prevButton.setText(" Prev ");
         TextView nextButton = (TextView) findViewById(R.id.nextButton);
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView nowPlayingMsg = (TextView) findViewById(R.id.nowPlaying);
         nowPlayingMsg.setText(player.upDateMessage());
 
+        //On Click listeners for list and buttons
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position, long arg3) {
@@ -63,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
                 nowPlayingMsg.setText(player.upDateMessage());
             }
         });
-
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // OnClickListener for song details
+        // OnClickListener for song details activity
         TextView songDetails = (TextView) findViewById(R.id.infoButton);
 
         songDetails.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +120,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(detailsIntent);
             }
         });
-
     }
 }
