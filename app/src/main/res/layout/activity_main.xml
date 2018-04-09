@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFF"
                 android:padding="8dp"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 tools:text="Prev" />
 
             <TextView
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFF"
                 android:padding="8dp"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 tools:text="Stop" />
 
             <TextView
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFF"
                 android:padding="8dp"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 tools:text="Play" />
 
             <TextView
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFF"
                 android:padding="8dp"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 tools:text="Next" />
 
             <TextView
@@ -88,7 +88,7 @@
                 android:background="#FFF"
                 android:padding="8dp"
                 android:text=" Song\nDetails"
-                android:textSize="9.68dp" />
+                android:textSize="9.68sp" />
 
         </LinearLayout>
     </LinearLayout>
